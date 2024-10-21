@@ -1,2 +1,2 @@
 # Aplikacje-Sieciowe
-Repozytorium do zajęć "aplikacje internetowe" na studiach
+Repozytorium do zajęć "aplikacje sieciowe" na studiach
