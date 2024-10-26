@@ -57,7 +57,7 @@ function process(&$amount, &$years, &$interest, &$messages, &$result) {
     $monthlyRate = $interest / 100 / $months;
 
     // Obliczenie raty kredytu
-    if ($interest > 5 && $role != 'admin') {
+    if ($interest < 2 && $role != 'admin') {
         $messages[] = 'Ta opcja jest dostępna tylko dla administratora';
         return;
     }
