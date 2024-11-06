@@ -1,35 +1,66 @@
-.splash-container {
-	background: #040 url("../img/leaf.jpg") no-repeat center top;
-	background-size: 100% 100%;
-	height: 100%;
+.header {
+    background-color: #4a90e2;;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: left;
 }
 
-.splash-head {
-	/*border: 0;*/
-	border-color: #020;
+.splash-container {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    height: calc(100vh - 60px); /* Full height minus header */
+    background: #e0f7fa;
+    text-align: center;
+    padding: 2em;
+}
+
+.splash-content {
+    border: 2px solid #004d40;
+    padding: 2em;
+    border-radius: 8px;
+    background-color: #ffffff80;
+}
+
+.content {
+    flex: 1;
+    padding: 2em;
+    box-sizing: border-box;
 }
 
 .content-wrapper {
-	top: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Take full viewport height */
 }
 
-.err {
-	padding: 1em 1em 1em 3em;
-	border-radius: 1em;
-	background-color: #f88;
-	color: #222;
+.pure-button-primary {
+    background-color: #ff7043;
+    color: white;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    display: block;
 }
 
-.inf {
-	padding: 1em 1em 1em 3em;
-	border-radius: 1em;
-	background-color: #8f8;
-	color: #222;
+.pure-button-primary:hover {
+    background-color: #d84315;
 }
 
-.res {
-	padding: 1em 1em 1em 1.5em;
-	border-radius: 1em;
-	background-color: #ff0;
-	color: #222;
+.footer {
+    background-color: #4a90e2;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    border-top: 2px solid #004d40;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+    box-sizing: border-box;
 }
