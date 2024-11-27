@@ -1,0 +1,60 @@
+{extends file="../templates/main.html"}
+
+{block name="footer"}
+Przykładowa treść stopki wpisana do szablonu głównego z szablonu kalkulatora
+{/block}
+
+{block name="content"}
+<h2>Kalkulator kredytowy</h2>
+
+<div class="form-container">
+    <form action="{$conf->app_url}/app/calc.php" method="post">
+        <label for="id_amount">Kwota kredytu:</label><br>
+        <input id="id_amount" type="text" name="amount" value="{$form->amount}" placeholder="Kwota kredytu"><br><br>
+
+        <label for="id_years">Liczba lat:</label><br>
+        <input id="id_years" type="text" name="years" value="{$form->years}" placeholder="Liczba lat"><br><br>
+
+        <label for="id_interest">Oprocentowanie roczne (%):</label><br>
+        <input id="id_interest" type="text" name="interest" value="{$form->interest}" placeholder="Oprocentowanie"><br><br>
+
+        <input type="submit" value="Oblicz">
+    </form>
+</div>
+
+{if $messages->isError()}
+	
+		<h4>Wystąpiły błędy: </h4>
+		<ol class="error">
+		{foreach  $messages->getErrors() as $msg}
+		{strip}
+			<li>{$msg}</li>
+		{/strip}
+		{/foreach}
+		</ol>
+	
+{/if}
+
+{if $messages->isInfo()}
+
+            <h4>Informacje: </h4>
+            <ol class="info">
+            {foreach  $messages->getInfos() as $msg}
+            {strip}
+                    <li>{$msg}</li>
+            {/strip}
+            {/foreach}
+            </ol>
+
+{/if}
+
+{if isset($result->result)}
+	<h4>Wynik:</h4>
+	<p class="result">
+            Wysokość miesięcznej raty wynosi {$result->result} zł.
+        </p>
+        <p class="total">
+            Całkowita kwota do spłaty wynosi {$result->total} zł.
+        </p>
+{/if}
+{/block}
