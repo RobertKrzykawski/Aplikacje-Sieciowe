@@ -48,7 +48,6 @@ class CalcCtrl {
         //nie ma sensu walidować dalej gdy brak parametrów
         if (! getMessages()->isError()) {
 
-        // sprawdzenie, czy $x i $y są liczbami całkowitymi
             if (! is_numeric( $this->form->amount )) {
                 getMessages()->addError('Wprowadzona wartość dla kwoty nie jest liczbą.');
             }
