@@ -1,7 +1,6 @@
 <?php
 require_once dirname(__FILE__).'/core/Config.class.php';
 $conf = new core\Config();
-//include dirname(__FILE__).'/config.php'; //ustaw konfigurację
 require_once 'config.php';
 
 function &getConf(){ global $conf; return $conf; }
