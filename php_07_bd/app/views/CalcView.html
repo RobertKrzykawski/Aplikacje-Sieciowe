@@ -1,0 +1,36 @@
+{extends file="main.html"}
+
+{block name=footer}Robert Krzykawski{/block}
+
+{block name=content}
+
+<h1>Kalkulator kredytowy</h1>
+<a href="{$conf->action_url}results">Historia wyników</a><br>
+<a href="{$conf->action_url}logout" class="logout-button">Wyloguj użytkownika: <b>{$user->login}</b></a>
+
+<section>
+    <h3>Wypełnij parametry kredytu</h3>
+    <form method="post" action="{$conf->action_root}calcCompute">
+            <div>
+                    <div>
+                        <input id="id_amount" type="text" name="amount" value="{$form->amount}" placeholder="Kwota kredytu" />
+                    </div>
+                    <div >
+                        <input id="id_years" type="text" name="years" value="{$form->years}" placeholder="Liczba lat" />
+                    </div>
+                    <div>
+                        <input id="id_interest" type="text" name="interest" value="{$form->interest}" placeholder="Oprocentowanie" />
+                    </div>
+                    <div>
+                        <ul class="actions">
+                                <input type="submit" value="Oblicz"/>
+                        </ul>
+                    </div>
+            </div>
+    </form>
+</section>
+
+{include file='messages.tpl'}
+
+</div>
+{/block}
